@@ -1,0 +1,29 @@
+table Country
+	lineageTag: 4ad01e6a-4bcc-4607-bfb9-4e044b5f7954
+
+	column Country
+		dataType: string
+		lineageTag: 1bb3a5a9-1bbe-45c1-97cb-15cc6b5f61cf
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryKey = LOOKUPVALUE(DimSalesTerritory[CountryKey],xCountrySalesTerritory[SalesTerritoryKey],[SalesTerritoryKey])
+		lineageTag: b3bedf2b-439f-4f34-a997-156f3306d7ad
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Country-a12def47-ceca-455b-acf3-fbc46138f688 = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [CountryKey = _t, Country = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"CountryKey", type text}, {"Country", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"CountryKey"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

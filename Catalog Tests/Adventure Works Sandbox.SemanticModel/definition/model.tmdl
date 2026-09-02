@@ -1,0 +1,54 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DimAccount","DimCustomer","DimDate","DimDepartmentGroup","DimEmployee","DimGeography","DimOrganization","DimProduct","DimProductCategory","DimProductSubcategory","DimPromotion","DimReseller","DimSalesTerritory","FactInternetSales","FactProductInventory","FactResellerSales","Country","CountrySalesTerritory"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DimAccount
+ref table DateTableTemplate_838b8e87-224a-4ccd-a57b-61d149718ef1
+ref table DimCustomer
+ref table LocalDateTable_c9ed98a0-96d9-4aa6-bfe5-91d91cae9837
+ref table LocalDateTable_c2a6185e-ce9a-4f5c-a436-b3d99b3bff26
+ref table DimDate
+ref table LocalDateTable_216787c3-4dbd-4b2e-8732-68ed0266d1b4
+ref table DimDepartmentGroup
+ref table DimEmployee
+ref table LocalDateTable_4e6d98c8-ea68-4155-8c19-e8db3b4bc5d2
+ref table LocalDateTable_7ca3a11b-d01e-4f84-b2a3-6df9df5d2440
+ref table LocalDateTable_1d863212-24b2-47f5-859d-b45d96ca444c
+ref table LocalDateTable_3375d2dc-4cd7-42ba-961f-902c72747a24
+ref table DimGeography
+ref table DimOrganization
+ref table DimProduct
+ref table LocalDateTable_73e637c5-72e2-41b7-abd4-9637664569ba
+ref table LocalDateTable_e117dbe5-4773-4877-8c9d-ddf59aff7424
+ref table DimProductCategory
+ref table DimProductSubcategory
+ref table DimPromotion
+ref table LocalDateTable_d4d7bc36-e826-46a4-b880-de24c08b419a
+ref table LocalDateTable_f5ae88ff-a346-4086-b877-29bd3ec38eaf
+ref table DimReseller
+ref table DimSalesTerritory
+ref table FactInternetSales
+ref table LocalDateTable_63a26b01-a7dc-426d-b4b0-c7aa53feb7a0
+ref table LocalDateTable_7b8e7107-9508-425d-97ab-566c60c2a007
+ref table LocalDateTable_83a98d79-b89a-404d-8f7e-b940fac2fd68
+ref table FactProductInventory
+ref table LocalDateTable_5b106316-e52c-491d-ba16-e13e1a03bf75
+ref table FactResellerSales
+ref table LocalDateTable_2528150c-b2e0-48a9-b9e5-c426cb0b189a
+ref table LocalDateTable_20404c02-d96b-457d-a3c5-3b31a14f0053
+ref table LocalDateTable_980abc6f-b487-48ff-8396-e7ebf5f7ca1c
+ref table Country
+ref table CountrySalesTerritory
+
+ref cultureInfo en-US
+

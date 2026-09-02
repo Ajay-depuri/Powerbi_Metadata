@@ -1,0 +1,57 @@
+table DimProductCategory
+	lineageTag: 8d53f7a0-cbe3-4074-85a7-e1504cd42fd7
+
+	column ProductCategoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 776ce915-6786-44e9-b339-374756ec78f6
+		summarizeBy: none
+		sourceColumn: ProductCategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCategoryAlternateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ed77f56-a987-4f00-894c-f9ec71d17b39
+		summarizeBy: none
+		sourceColumn: ProductCategoryAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column EnglishProductCategoryName
+		dataType: string
+		lineageTag: e833bab1-8e43-4e77-bce1-d422a6e8b458
+		summarizeBy: none
+		sourceColumn: EnglishProductCategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpanishProductCategoryName
+		dataType: string
+		lineageTag: 2516f96f-cb61-4c8e-b2c8-ed7c9f2a3b15
+		summarizeBy: none
+		sourceColumn: SpanishProductCategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FrenchProductCategoryName
+		dataType: string
+		lineageTag: edfec512-208e-4bf2-a21c-12f06ac1e62d
+		summarizeBy: none
+		sourceColumn: FrenchProductCategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProductCategory-f878ccf1-f2f7-4e8b-ac01-e6cc1aa583cf = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("192.168.6.72:1433"),
+				    AdventureWorksDW2014 = Source{[Name="AdventureWorksDW2014"]}[Data],
+				    dbo_DimProductCategory = AdventureWorksDW2014{[Schema="dbo",Item="DimProductCategory"]}[Data]
+				in
+				    dbo_DimProductCategory
+
+	annotation PBI_ResultType = Table
+

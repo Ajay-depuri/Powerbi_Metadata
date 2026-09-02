@@ -1,0 +1,30 @@
+table CountrySalesTerritory
+	lineageTag: be6e8599-8f8c-49f7-9fd2-73b3226cb545
+
+	column CountryKey
+		dataType: string
+		lineageTag: e9cbfccf-276e-49de-bf7b-1add9b1c5ddb
+		summarizeBy: none
+		sourceColumn: CountryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryKey
+		dataType: string
+		lineageTag: 7d5807df-b43a-41cb-a990-ff737b17ab57
+		summarizeBy: none
+		sourceColumn: SalesTerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CountrySalesTerritory-63deb513-c218-48ec-a220-996e8f227802 = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [CountryKey = _t, SalesTerritoryKey = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"CountryKey", type text}, {"SalesTerritoryKey", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

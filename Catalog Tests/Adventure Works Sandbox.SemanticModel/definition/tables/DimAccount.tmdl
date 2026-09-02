@@ -1,0 +1,99 @@
+table DimAccount
+	lineageTag: 4db87b92-49d0-48d5-bdd4-dcc3af1b536e
+
+	column AccountKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ccdd496-9193-412b-8fd2-41426deb1746
+		summarizeBy: count
+		sourceColumn: AccountKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentAccountKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a7f1ee67-67dc-43fc-bccc-0a4d18ab4cd0
+		summarizeBy: count
+		sourceColumn: ParentAccountKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountCodeAlternateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ebfb959-f9c1-4cd2-9862-b8badfa5620a
+		summarizeBy: count
+		sourceColumn: AccountCodeAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentAccountCodeAlternateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a069f37a-6d00-4362-867b-7500756d0018
+		summarizeBy: count
+		sourceColumn: ParentAccountCodeAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountDescription
+		dataType: string
+		lineageTag: bbf1b6f4-93b0-4839-a6ef-340c812e5dd2
+		summarizeBy: none
+		sourceColumn: AccountDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountType
+		dataType: string
+		lineageTag: 92fb37e4-3b8b-454d-8859-5fd74c8b5e60
+		summarizeBy: none
+		sourceColumn: AccountType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Operator
+		dataType: string
+		lineageTag: 4fac0440-d3fc-474c-85c4-9ae1c996daa1
+		summarizeBy: none
+		sourceColumn: Operator
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomMembers
+		dataType: string
+		lineageTag: 66d36a2a-9f5f-4c73-b1ef-f1c0f041a3d7
+		summarizeBy: none
+		sourceColumn: CustomMembers
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValueType
+		dataType: string
+		lineageTag: 5d66df97-3548-47fb-be83-44e3e5277d60
+		summarizeBy: none
+		sourceColumn: ValueType
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomMemberOptions
+		dataType: string
+		lineageTag: fc9e44b4-0731-4b08-892e-9c3e0f2f1a01
+		summarizeBy: none
+		sourceColumn: CustomMemberOptions
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimAccount-1be86e6c-566f-444e-bb31-cedbae511d7d = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("192.168.6.72:1433"),
+				    AdventureWorksDW2014 = Source{[Name="AdventureWorksDW2014"]}[Data],
+				    dbo_DimAccount = AdventureWorksDW2014{[Schema="dbo",Item="DimAccount"]}[Data]
+				in
+				    dbo_DimAccount
+
+	annotation PBI_ResultType = Table
+

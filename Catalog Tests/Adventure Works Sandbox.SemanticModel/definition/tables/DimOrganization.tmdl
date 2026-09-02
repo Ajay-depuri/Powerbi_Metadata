@@ -1,0 +1,58 @@
+table DimOrganization
+	lineageTag: 284f5c3a-8f79-40e3-a885-6a77b1c00e66
+
+	column OrganizationKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 449efb7d-8b58-4cef-b59e-406bccb1820d
+		summarizeBy: count
+		sourceColumn: OrganizationKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentOrganizationKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 93b678c3-c5a6-42e1-9253-ce166ba81273
+		summarizeBy: count
+		sourceColumn: ParentOrganizationKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PercentageOfOwnership
+		dataType: string
+		lineageTag: a2b61c83-6f2c-4242-a3fb-ab210ad2c8ca
+		summarizeBy: none
+		sourceColumn: PercentageOfOwnership
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrganizationName
+		dataType: string
+		lineageTag: af89f67c-7404-4da5-8441-628ff1feb6ae
+		summarizeBy: none
+		sourceColumn: OrganizationName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyKey
+		dataType: int64
+		formatString: 0
+		lineageTag: b00b862d-25f4-4c61-a93f-f10019d009ba
+		summarizeBy: count
+		sourceColumn: CurrencyKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimOrganization-68f3b1c6-17e3-4c30-b9d4-4c5b53e2fcba = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("192.168.6.72:1433"),
+				    AdventureWorksDW2014 = Source{[Name="AdventureWorksDW2014"]}[Data],
+				    dbo_DimOrganization = AdventureWorksDW2014{[Schema="dbo",Item="DimOrganization"]}[Data]
+				in
+				    dbo_DimOrganization
+
+	annotation PBI_ResultType = Table
+
