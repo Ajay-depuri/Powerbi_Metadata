@@ -199,6 +199,25 @@
             }
           ]
         }
+      },
+      {
+        "name": "dcc079f66906917229e7",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DimReseller"
+                  }
+                },
+                "Property": "AnnualRevenue"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

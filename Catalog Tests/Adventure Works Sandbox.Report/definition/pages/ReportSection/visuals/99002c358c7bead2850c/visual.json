@@ -287,6 +287,25 @@
             }
           ]
         }
+      },
+      {
+        "name": "c3acd76d8e6c0504a3e0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DimCustomer"
+                  }
+                },
+                "Property": "YearlyIncome"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

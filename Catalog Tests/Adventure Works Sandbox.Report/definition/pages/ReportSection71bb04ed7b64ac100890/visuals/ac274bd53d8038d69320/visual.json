@@ -172,5 +172,42 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7b924ef072246eb55eda",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimReseller"
+              }
+            },
+            "Property": "ResellerName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a78142536c1ca455b05c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DimReseller"
+                  }
+                },
+                "Property": "AnnualSales"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

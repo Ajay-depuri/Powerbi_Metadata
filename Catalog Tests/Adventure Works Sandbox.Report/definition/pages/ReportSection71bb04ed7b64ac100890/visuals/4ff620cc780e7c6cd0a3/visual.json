@@ -167,5 +167,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2e5ee8b1482ded00a73e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimReseller"
+              }
+            },
+            "Property": "BusinessType"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

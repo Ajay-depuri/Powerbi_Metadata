@@ -214,5 +214,23 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9156d564700c0ed71ce3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimGeography"
+              }
+            },
+            "Property": "EnglishCountryRegionName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
