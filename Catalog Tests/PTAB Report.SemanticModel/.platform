@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "PTAB Report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "373d0966-ae6f-41a5-8378-447db36dbf16"
+  }
+}

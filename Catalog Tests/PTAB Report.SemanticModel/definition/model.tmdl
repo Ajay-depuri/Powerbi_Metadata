@@ -1,0 +1,26 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["People","Superstore_Orders","Superstore_Returns","Orders"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table People
+ref table DateTableTemplate_02e62cb7-bfc0-416f-bac4-39c90f973faf
+ref table Superstore_Orders
+ref table LocalDateTable_dc9c7340-776e-4351-861d-daf2d55222a5
+ref table LocalDateTable_df54747f-bee0-40d1-a66a-eb982677e761
+ref table Superstore_Returns
+ref table Orders
+ref table LocalDateTable_dca259b6-a073-4f49-88f5-05f7e00ad0ed
+ref table LocalDateTable_a104617c-0ffe-46d8-a67f-6893472a4eda
+
+ref cultureInfo en-IN
+
