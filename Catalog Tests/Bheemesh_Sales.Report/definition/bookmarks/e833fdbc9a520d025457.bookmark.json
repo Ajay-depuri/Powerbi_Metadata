@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "country bookmark",
+  "name": "e833fdbc9a520d025457",
+  "options": {
+    "targetVisualNames": []
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "6e6ed32df03990aac2e4",
+    "sections": {
+      "6e6ed32df03990aac2e4": {
+        "visualContainers": {}
+      }
+    },
+    "objects": {}
+  }
+}

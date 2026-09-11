@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Bheemesh_Sales"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "beee08b3-979b-47f1-8ab9-84ccd39f6c28"
+  }
+}

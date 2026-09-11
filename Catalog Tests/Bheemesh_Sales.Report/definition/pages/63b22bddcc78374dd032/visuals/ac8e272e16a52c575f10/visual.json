@@ -1,0 +1,84 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "ac8e272e16a52c575f10",
+  "position": {
+    "x": 528,
+    "y": 272,
+    "z": 1000,
+    "height": 224,
+    "width": 304,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "data"
+                    }
+                  },
+                  "Property": "Sales Person"
+                }
+              },
+              "queryRef": "data.Sales Person",
+              "nativeQueryRef": "Sales Person"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "data"
+                        }
+                      },
+                      "Property": "Boxes Shipped"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(data.Boxes Shipped)",
+              "nativeQueryRef": "Sum of Boxes Shipped"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "data"
+                      }
+                    },
+                    "Property": "Boxes Shipped"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

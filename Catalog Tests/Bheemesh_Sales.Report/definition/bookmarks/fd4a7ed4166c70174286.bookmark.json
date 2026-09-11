@@ -1,0 +1,20 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "product_bookmark",
+  "name": "fd4a7ed4166c70174286",
+  "options": {
+    "targetVisualNames": [
+      "2d8617c3160183b791d6"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "6e6ed32df03990aac2e4",
+    "sections": {
+      "6e6ed32df03990aac2e4": {
+        "visualContainers": {}
+      }
+    },
+    "objects": {}
+  }
+}
